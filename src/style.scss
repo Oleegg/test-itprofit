@@ -1,3 +1,5 @@
+$gray: #909090;
+
 * {
   margin: 0;
   padding: 0;
@@ -6,4 +8,125 @@
 
 html {
   scrollbar-gutter: stable;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  background: $gray;
+  padding: 20px;
+  margin: 20px auto;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  border-radius: 5px;
+  font-size: 20px;
+  max-width: 90%;
+  width: 100%;
+}
+
+input:focus,
+textarea:focus {
+  outline: none !important;
+}
+
+.err {
+  border: 2px solid red;
+}
+
+.btn {
+  padding: 10px 30px;
+
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.error-text {
+  font-size: 20px;
+  height: 25px;
+  color: red;
+  height: 25px;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0) rotate(360deg);
+  opacity: 0;
+  transition: all 1s;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    height: 70vh;
+    width: 70vw;
+    background-color: aliceblue;
+  }
+  &__btn {
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  &__text {
+    font-size: 1rem;
+  }
+  &__red {
+    color: red;
+  }
+  &__green {
+    color: green;
+  }
+}
+
+.visible {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+.scroll {
+  overflow: hidden;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
 }
