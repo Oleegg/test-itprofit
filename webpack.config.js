@@ -6,8 +6,7 @@ module.exports = (env) => {
   const config = {
     mode: env.mode ?? "development",
     entry: [
-      //   path.resolve(__dirname, "src/components", "mask.js"),
-      //   path.resolve(__dirname, "src/components", "validation.js"),
+      path.resolve(__dirname, "src/components", "mask.js"),
       path.resolve(__dirname, "src", "index.js"),
     ],
     output: {
